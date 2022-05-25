@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ba website</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h2>Ba's Customer Management Site</h2>
+    <% for (const customerName of customerNames) { %>
+    <div class="order_form">
+      <div class="customer_order">
+        <h4>Khách hàng <%=customerName.name %></h4>
+        <div class="plus_functions">
+          <div class="choose_function">
+            <div class="checker">
+              <span class="checked"
+                ><input type="checkbox" class="function"
+              /></span>
+            </div>
+            Cộng số lượng
+          </div>
+          <div class="choose_function">
+            <div class="checker">
+              <span class="checked"
+                ><input type="checkbox" class="function"
+              /></span>
+            </div>
+            Cộng giá bán
+          </div>
+        </div>
+      </div>
+      <div class="order_details">
+        <ul class="product_name">
+          <h5>Tên Sản Phẩm</h5>
+          <% for (const data of datas) { %> <% if(data.customer_name ===
+          customerName.name){ %>
+          <li><%= data.product_name%></li>
+          <% } %> <%} %>
+        </ul>
+
+        <ul class="quantity">
+          <h5>Số lượng</h5>
+          <% for (const data of datas) { %> <% if(data.customer_name ===
+          customerName.name){ %>
+          <li><%= data.quantity%></li>
+          <% } %> <%} %>
+        </ul>
+        <ul class="price">
+          <h5>Giá bán</h5>
+          <% for (const data of datas) { %> <% if(data.customer_name ===
+          customerName.name){ %>
+          <li><%= data.price%></li>
+          <% } %> <%} %>
+        </ul>
+        <ul class="total_price">
+          <h5>Thành tiền</h5>
+          <% for (const data of datas) { %> <% if(data.customer_name ===
+          customerName.name){ %>
+          <li><%= data.position_price%></li>
+          <% } %> <%} %>
+        </ul>
+        <p class="total_quantity">
+          Tổng số lượng: <% for (const sumData of sumDatas) { %> <%
+          if(sumData.customer_name === customerName.name){ %>
+          <strong><%= sumData.sum_quantity%></strong>
+          <% } %> <%} %>
+        </p>
+      </div>
+    </div>
+
+    <% }%>
+  </body>
+</html>

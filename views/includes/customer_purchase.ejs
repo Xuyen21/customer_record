@@ -1,0 +1,49 @@
+<div class="order_form">
+  <div class="customer_order">
+    <h4>Khách hàng <%=customerName.name %></h4>
+    <div class="plus_functions">
+      <div class="choose_function">
+        <div class="checker">
+          <span class="checked"
+            ><input type="checkbox" class="function"
+          /></span>
+        </div>
+        Cộng số lượng
+      </div>
+      <div class="choose_function">
+        <div class="checker">
+          <span class="checked"
+            ><input type="checkbox" class="function"
+          /></span>
+        </div>
+        Cộng giá bán
+      </div>
+    </div>
+  </div>
+  <div class="order_details">
+
+    <ul class="product_name">
+      <h5>Tên Sản Phẩm</h5>
+      <% for (const data of datas) { %> <% if(data.customer_name ===
+      customerName.name){ %>
+      <li>Sản phẩm...</li>
+      <% } else { %>
+      <p>that is all</p>
+      <% } %> <%} %>
+    </ul>
+
+    <ul class="quantity">
+      <h5>Số lượng</h5>
+      <li>sô lượng....</li>
+    </ul>
+    <ul class="price">
+      <h5>Giá bán</h5>
+      <li>gia bán....</li>
+    </ul>
+    <ul class="total_price">
+      <h5>Thành tiền</h5>
+      <li>thành tiền....</li>
+    </ul>
+    <p class="total_quantity">Tổng số lượng:00</p>
+  </div>
+</div>
